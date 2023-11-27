@@ -32,10 +32,7 @@ class ChessBoard extends Chess {
     }
 }
 
-/**
- * Fusion chess board implementation
- * @author Lucas Bubner, 2023
- */
+
 export default class FusionBoard extends ChessBoard {
     // Extending from the Chess class allows us to use the same implementation mechanics of normal chess
     // This allows us to use the same movePiece function and other functions that are already implemented

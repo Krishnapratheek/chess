@@ -362,13 +362,8 @@ function App() {
                 />
             </div>
             <div className="left">
-                <h1 className="title">Fusion Chess</h1>
-                <h3 style={{ color: "white" }}>
-                    <a style={{ color: "#4db2ff" }} href="https://github.com/hololb/" target="_blank" rel="noreferrer">
-                        Lucas Bubner
-                    </a>
-                    , 2023
-                </h3>
+                <h1 className="title">Retro Chess</h1>
+             
                 <button
                     id="reset"
                     onClick={() => {
@@ -382,17 +377,7 @@ function App() {
                     Undo
                 </button>
                 <br />
-                <button onClick={exportGame}>
-                    Export
-                </button>
-                <button onClick={importGame}>
-                    Import
-                </button>
-                <br />
-                <button onClick={() => setIsStockfishOn(!isStockfishOn)}>
-                    Toggle Stockfish
-                </button>
-                <br />
+            
                 <button
                     id="start"
                     style={{
@@ -408,33 +393,7 @@ function App() {
                     {msgAlert}
                 </p>
             </div>
-            <div className="middle">
-                <p className="title">Fused</p>
-                <p className="history">
-                    {game.positions[1] && Object.keys(game.positions[1]).length > 0 ? (
-                        Object.entries(game.positions[1]).map((position, index) => {
-                            return (
-                                <Fragment key={index}>
-                                    {position.slice(0, 1)}={position.slice(-1).toString().substring(1)}
-                                    {position.slice(-1).toString().substring(0, 1).toUpperCase()}{" "}
-                                </Fragment>
-                            );
-                        })
-                    ) : (
-                        <>No standard pieces have been fused.</>
-                    )}
-                    {game.positions[3] &&
-                        Object.keys(game.positions[3]).length > 0 &&
-                        Object.entries(game.positions[3]).map((position, index) => {
-                            return (
-                                <Fragment key={index}>
-                                    <br />
-                                    {position.slice(0, 1)}={position.slice(-1)}
-                                </Fragment>
-                            );
-                        })}
-                </p>
-            </div>
+      
             <div className="bottom">
                 <p className="title">History</p>
                 <p className="history">
@@ -452,14 +411,7 @@ function App() {
                     )}
                 </p>
             </div>
-            {isStockfishOn &&
-                <Stockfish
-                    fen={isGameStarted ? fen : null}
-                    vfen={isGameStarted ? game.positions[2] : ""}
-                    depth={18}
-                    shouldRun={!game.isGameOver()}
-                />
-            }
+          
         </div>
     );
 }

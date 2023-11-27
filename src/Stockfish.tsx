@@ -1,9 +1,5 @@
 8;
-/**
- * Stockfish compatibility module for displaying current evaluation status information.
- * Compatible with FEN strings only. Limitations include FusionChess's dual board nature.
- * @author Lucas Bubner, 2023
- */
+
 import { useEffect, useRef, useState, Fragment } from "react";
 
 class Engine {
